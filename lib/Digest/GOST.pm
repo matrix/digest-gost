@@ -108,7 +108,7 @@ You can also look for information at:
 
 =item * GitHub Source Repository
 
-L<http://github.com/gray/digest-gost>
+L<http://github.com/matrix/digest-gost>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
@@ -131,6 +131,7 @@ L<http://search.cpan.org/dist/Digest-GOST/>
 =head1 COPYRIGHT AND LICENSE
 
 Copyright (C) 2010-2012 gray <gray at cpan.org>, all rights reserved.
+Copyright (C) 2025 by Gabriele Gristina a.k.a. matrix, all rights reserved.
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
@@ -138,5 +139,6 @@ under the same terms as Perl itself.
 =head1 AUTHOR
 
 gray, <gray at cpan.org>
+Gabriele Gristina a.k.a. matrix
 
 =cut

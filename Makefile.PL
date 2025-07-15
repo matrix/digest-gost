@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 
 my %conf = (
     NAME          => 'Digest::GOST',
-    AUTHOR        => 'gray <gray@cpan.org>',
+    AUTHOR        => [ 'gray <gray@cpan.org>', 'Gabriele Gristina a.k.a. matrix' ],
     LICENSE       => 'perl',
     VERSION_FROM  => 'lib/Digest/GOST.pm',
     ABSTRACT_FROM => 'lib/Digest/GOST.pm',
@@ -15,7 +15,7 @@ my %conf = (
     },
     BUILD_REQUIRES => { 'Test::More' => 0.82, },
     META_MERGE     => {
-        resources => { repository => 'http://github.com/gray/digest-gost' },
+        resources => { repository => 'http://github.com/matrix/digest-gost' },
     },
 
     INC => '-Isrc/win32' x !!($^O eq 'MSWin32'),
