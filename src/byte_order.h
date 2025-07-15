@@ -38,27 +38,29 @@ extern "C" {
 # endif
 #endif
 
-
 /* detect CPU endianness */
 #if (defined(__BYTE_ORDER) && defined(__LITTLE_ENDIAN) && \
-		__BYTE_ORDER == __LITTLE_ENDIAN) || \
-	defined(CPU_IA32) || defined(CPU_X64) || \
-	defined(__ia64) || defined(__ia64__) || defined(__alpha__) || defined(_M_ALPHA) || \
-	defined(vax) || defined(MIPSEL) || defined(_ARM_)
+                __BYTE_ORDER == __LITTLE_ENDIAN) || \
+        defined(CPU_IA32) || defined(CPU_X64) || \
+        defined(__ia64) || defined(__ia64__) || defined(__alpha__) || defined(_M_ALPHA) || \
+        defined(vax) || defined(MIPSEL) || defined(_ARM_) || \
+        defined(__aarch64__) || defined(__arm64__)  /* <-- Added ARM64 detection */
 # define CPU_LITTLE_ENDIAN
 # define IS_BIG_ENDIAN 0
 # define IS_LITTLE_ENDIAN 1
+
 #elif (defined(__BYTE_ORDER) && defined(__BIG_ENDIAN) && \
-		__BYTE_ORDER == __BIG_ENDIAN) || \
-	defined(__sparc) || defined(__sparc__) || defined(sparc) || \
-	defined(_ARCH_PPC) || defined(_ARCH_PPC64) || defined(_POWER) || \
-	defined(__POWERPC__) || defined(POWERPC) || defined(__powerpc) || \
-	defined(__powerpc__) || defined(__powerpc64__) || defined(__ppc__) || \
-	defined(__hpux)  || defined(_MIPSEB) || defined(mc68000) || \
-	defined(__s390__) || defined(__s390x__) || defined(sel)
+                __BYTE_ORDER == __BIG_ENDIAN) || \
+        defined(__sparc) || defined(__sparc__) || defined(sparc) || \
+        defined(_ARCH_PPC) || defined(_ARCH_PPC64) || defined(_POWER) || \
+        defined(__POWERPC__) || defined(POWERPC) || defined(__powerpc) || \
+        defined(__powerpc__) || defined(__powerpc64__) || defined(__ppc__) || \
+        defined(__hpux)  || defined(_MIPSEB) || defined(mc68000) || \
+        defined(__s390__) || defined(__s390x__) || defined(sel)
 # define CPU_BIG_ENDIAN
 # define IS_BIG_ENDIAN 1
 # define IS_LITTLE_ENDIAN 0
+
 #else
 # error "Can't detect CPU architechture"
 #endif
